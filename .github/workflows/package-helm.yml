@@ -6,6 +6,8 @@ on:
       - main
     paths:
       - 'charts/**'
+  # Add workflow_dispatch to allow manual runs
+  workflow_dispatch:
 
 jobs:
   package-deploy-helm-chart:
