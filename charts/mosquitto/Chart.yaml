@@ -1,0 +1,8 @@
+apiVersion: v2
+name: mosquitto
+description: A Helm chart packaging Mosquitto
+type: application
+version: 0.0.2
+appVersion: 2.0.18
+home: https://github.com/turbo5000c/mosquitto-mqtt-helm
+icon: https://mosquitto.org/images/mosquitto-text-side-28.png
