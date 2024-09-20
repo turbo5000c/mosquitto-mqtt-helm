@@ -37,7 +37,7 @@ jobs:
       # Package Helm Chart
       - name: Package Helm Chart
         run: |
-          cd charts/home-assistant
+          cd charts/mosquitto
           ls -l 
           helm dependency update || exit 1
           CHART_VERSION=$(date +'%Y.%-m.%-d')
