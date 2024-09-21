@@ -50,6 +50,9 @@ spec:
           {{- if .Values.mosquitto.ssl.enabled }}
           - name: ssl-volume
             mountPath: /mosquitto/ssl
+          {{- end }}          
+          {{- if .Values.additionalMounts }}
+          {{- .Values.additionalMounts | toYaml | nindent 10 }}
           {{- end }}
       volumes:
         - name: config-volume
@@ -71,6 +74,9 @@ spec:
         {{- else }}
             claimName: {{ template "mosquitto.fullname" . }}
         {{- end }}
+        {{- end }}
+        {{- if .Values.additionalVolumes }}
+        {{- .Values.additionalVolumes | toYaml | nindent 8 }}
         {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
